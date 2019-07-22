@@ -1,0 +1,27 @@
+<!DOCTYPE html>   
+<script>  // Расчет числа Пи методом монте-карло. 
+	var radius = +prompt ('Введите радиус круга','');
+	var nPoints = +prompt('Ввведите количество точек','');
+	var circlePoints = 0; // количество точек, входящих в круг
+	var allPoints = 0; // количество всех точек
+	
+	function getRandomArbitary(min, max) // функция рандома числа
+	{
+		return Math.random() * (max - min) + min;
+	}
+
+	for( i = 0; i < nPoints; i++) { 
+		x = getRandomArbitary( -radius, radius); // рандом х,у 
+		y = getRandomArbitary( -radius, radius);
+		c = Math.sqrt( Math.pow(x,2) + Math.pow(y,2)); // расчет радиуса
+		++allPoints; // счет всех точек
+		if (c <= radius ) { 
+			circlePoints++; // счет точек попавших в круг
+		}		
+	}
+	alert('Количество точек: ' + allPoints);
+	alert('Количество точек, попавших в круг: ' + circlePoints);
+	piCalculation = (4 * circlePoints) / allPoints; // расчет Пи
+	alert('Число Пи = ' + piCalculation);
+
+</script>
