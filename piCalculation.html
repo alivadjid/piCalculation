@@ -7,17 +7,17 @@
   var allPoints = 0; // количество всех точек
 	
   function getRandomArbitary(min, max) { // функция рандома числа
-	return Math.random() * (max - min) + min;
+    return Math.random() * (max - min) + min;
   }
 
   for( i = 0; i < nPoints; i++) { 
     x = getRandomArbitary( -radius, radius); // рандом х,у 
-	y = getRandomArbitary( -radius, radius);
-	c = Math.sqrt( Math.pow(x,2) + Math.pow(y,2)); // расчет радиуса
-	++allPoints; // счет всех точек
-	if (c <= radius ) { 
+    y = getRandomArbitary( -radius, radius);
+    c = Math.sqrt( Math.pow(x,2) + Math.pow(y,2)); // расчет радиуса
+    ++allPoints; // счет всех точек
+    if (c <= radius ) { 
 	  circlePoints++; // счет точек попавших в круг
-	}		
+    }		
   }
 	
   piCalculation = (4 * circlePoints) / allPoints; // расчет Пи
